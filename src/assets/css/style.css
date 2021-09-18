@@ -1,0 +1,16 @@
+.btn-primary {
+  background-color: #8bac3e;
+  border-color: #8bac3e;
+}
+
+.btn-light {
+  background-color: #f2f2f2;
+}
+
+.text-primary {
+  color: #8bac3e !important;
+}
+
+.text-warning {
+  color: #ff8412 !important;
+}
