@@ -67,7 +67,7 @@
         <div class="d-flex">
           <button
             type="button"
-            class="btn btn-primary btn-lg rounded-pill px-4 me-4"
+            class="btn btn-primary btn-lg rounded-pill px-4 me-4 shadow"
           >
             Daftar Sekarang
           </button>
@@ -165,7 +165,7 @@
       <div class="row mb-5" style="row-gap: 1.5rem">
         <div v-for="recipe in recipes" :key="recipe.id" class="col-12 col-lg-3">
           <div
-            class="card shadow"
+            class="card shadow-sm"
             :style="{ 'background-color': recipe.color }"
           >
             <div class="card-body">
