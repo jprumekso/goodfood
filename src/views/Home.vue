@@ -48,18 +48,24 @@
 
     <!-- Hero Header -->
     <div class="row align-items-center g-5 py-5">
-      <div class="col-lg-6">
+      <div class="col-12 col-lg-6">
         <h1 class="display-5 fw-bold lh-1 mb-3">Good Food Us</h1>
         <h1 class="display-5 fw-bold lh-1 mb-3">Good Mood</h1>
+        <img
+          src="../assets/hero.png"
+          class="d-block d-lg-none mx-lg-auto py-5"
+          loading="lazy"
+          style="width: 230px"
+        />
         <p class="lead">
           I would think that conserving our natural resources should be a
           conservative position. Not to waste food, and not to throw away a lot
           of the food that we buy.
         </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <div class="d-flex">
           <button
             type="button"
-            class="btn btn-success btn-lg rounded-pill px-4 me-md-2"
+            class="btn btn-success btn-lg rounded-pill px-4 me-4"
           >
             Daftar Sekarang
           </button>
@@ -68,7 +74,7 @@
           </button>
         </div>
       </div>
-      <div class="col-10 col-sm-8 col-lg-6">
+      <div class="d-none d-lg-block col-lg-6">
         <img
           src="../assets/hero.png"
           class="d-block mx-lg-auto img-fluid"
@@ -151,7 +157,7 @@
       <h3>Browse Our Trending</h3>
       <h3>Receipt</h3>
       <div class="row mb-5" style="row-gap: 1.5rem">
-        <div v-for="recipe in recipes" :key="recipe.id" class="col col-lg-3">
+        <div v-for="recipe in recipes" :key="recipe.id" class="col-12 col-lg-3">
           <div class="card shadow">
             <div class="card-body">
               <img
@@ -180,115 +186,146 @@
     <!-- End of Receipt Section -->
   </div>
 
-  <div class="bg-light p-5">
-    <!-- Footer -->
-    <div
-      class="d-flex justify-content-between mx-auto p-4"
-      style="max-width: 1140px; font-size: 14px"
-    >
-      <div>
-        <img src="../assets/elemes.png" class="mb-4" />
-        <p class="text-muted">
-          Jl. Prof. DR. Satrio No.7 RT.3/RW.3, Karet Kuningan, <br />
-          Kecamatan Setiabudi, Kota Jakarta Selatan, <br />
-          Daerah Khusus Ibukota Jakarta 12950
-        </p>
-        <div class="d-flex">
-          <button
-            class="btn rounded-circle text-success me-2"
-            style="width: 40px; height: 40px"
-          >
-            <i class="bi bi-envelope"></i>
-          </button>
-          <button
-            class="btn rounded-circle text-success me-2"
-            style="width: 40px; height: 40px"
-          >
-            <i class="bi bi-telephone"></i>
-          </button>
-          <button
-            class="btn rounded-circle text-success me-2"
-            style="width: 40px; height: 40px"
-          >
-            <i class="bi bi-instagram"></i>
-          </button>
-        </div>
-      </div>
-
-      <div>
-        <p class="fw-bold">Categories</p>
-        <ul class="nav d-none d-lg-block">
-          <li>
-            <a href="#" class="nav-link link-dark px-0 text-muted">Home</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link link-dark px-0 text-muted">About</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link link-dark px-0 text-muted">Blogs</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link link-dark px-0 text-muted"
-              >Contact Us</a
+  <!-- Desktop Footer -->
+  <div class="d-none d-lg-block">
+    <div class="bg-light p-5">
+      <div
+        class="d-flex justify-content-between mx-auto p-4"
+        style="max-width: 1140px; font-size: 14px"
+      >
+        <div>
+          <img src="../assets/elemes.png" class="mb-4" />
+          <p class="text-muted">
+            Jl. Prof. DR. Satrio No.7 RT.3/RW.3, Karet Kuningan, <br />
+            Kecamatan Setiabudi, Kota Jakarta Selatan, <br />
+            Daerah Khusus Ibukota Jakarta 12950
+          </p>
+          <div class="d-flex">
+            <button
+              class="btn rounded-circle text-success me-2"
+              style="width: 40px; height: 40px"
             >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="fw-bold">About Us</p>
-        <ul class="nav d-none d-lg-block">
-          <li>
-            <a href="#" class="nav-link link-dark px-0 text-muted">About Us</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link link-dark px-0 text-muted">FAQ</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link link-dark px-0 text-muted"
-              >Report Problem</a
+              <i class="bi bi-envelope"></i>
+            </button>
+            <button
+              class="btn rounded-circle text-success me-2"
+              style="width: 40px; height: 40px"
             >
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="fw-bold">Newsletter</p>
-        <p class="text-muted">
-          Get now free 50% discount for all<br />products on your first order
-        </p>
-        <div class="input-group mb-3" style="width: 250px">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Your email address"
-          />
-          <button class="btn btn-success" type="button">Button</button>
+              <i class="bi bi-telephone"></i>
+            </button>
+            <button
+              class="btn rounded-circle text-success me-2"
+              style="width: 40px; height: 40px"
+            >
+              <i class="bi bi-instagram"></i>
+            </button>
+          </div>
         </div>
 
         <div>
-          <ul class="nav flex-column">
+          <p class="fw-bold">Categories</p>
+          <ul class="nav d-none d-lg-block">
             <li>
-              <a href="#" class="nav-link link-dark px-0"
-                ><i class="bi bi-envelope text-success"></i>
-                elemesid@gmail.com</a
-              >
+              <a href="#" class="nav-link link-dark px-0 text-muted">Home</a>
             </li>
             <li>
-              <a href="#" class="nav-link link-dark px-0"
-                ><i class="bi bi-envelope text-success"></i> 0888 1111 2222</a
+              <a href="#" class="nav-link link-dark px-0 text-muted">About</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link link-dark px-0 text-muted">Blogs</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link link-dark px-0 text-muted"
+                >Contact Us</a
               >
             </li>
           </ul>
         </div>
+
+        <div>
+          <p class="fw-bold">About Us</p>
+          <ul class="nav d-none d-lg-block">
+            <li>
+              <a href="#" class="nav-link link-dark px-0 text-muted"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="nav-link link-dark px-0 text-muted">FAQ</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link link-dark px-0 text-muted"
+                >Report Problem</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="fw-bold">Newsletter</p>
+          <p class="text-muted">
+            Get now free 50% discount for all<br />products on your first order
+          </p>
+          <div class="input-group mb-3" style="width: 250px">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your email address"
+            />
+            <button class="btn btn-success" type="button">Button</button>
+          </div>
+
+          <div>
+            <ul class="nav flex-column">
+              <li>
+                <a href="#" class="nav-link link-dark px-0"
+                  ><i class="bi bi-envelope text-success"></i>
+                  elemesid@gmail.com</a
+                >
+              </li>
+              <li>
+                <a href="#" class="nav-link link-dark px-0"
+                  ><i class="bi bi-envelope text-success"></i> 0888 1111 2222</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <div class="d-flex bg-white justify-content-center py-4">
+      <p class="mb-0 text-muted">
+        <small>@ 2021 ELEMES ID . ALL RIGHTS SERVED</small>
+      </p>
     </div>
   </div>
 
-  <div class="bg-white d-flex justify-content-center py-4">
-    <p class="mb-0 text-muted">
-      <small>@ 2021 ELEMES ID . ALL RIGHTS SERVED</small>
-    </p>
+  <!-- Mobile Footer -->
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <button class="btn text-muted">
+        <i
+          class="bi bi-house-door d-block"
+          style="font-size: 1.75rem; margin-bottom: -8px"
+        ></i>
+        <small style="font-size: 12px">Home</small>
+      </button>
+      <button class="btn text-muted">
+        <i
+          class="bi bi-award d-block"
+          style="font-size: 1.75rem; margin-bottom: -8px"
+        ></i>
+        <small style="font-size: 12px">Promotions</small>
+      </button>
+      <button class="btn text-muted">
+        <i
+          class="bi bi-list d-block"
+          style="font-size: 1.75rem; margin-bottom: -8px"
+        ></i>
+        <small style="font-size: 12px">Others</small>
+      </button>
+    </div>
   </div>
 </template>
 
