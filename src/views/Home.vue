@@ -102,7 +102,7 @@
         >
           <div
             class="card"
-            style="max-width: 230px; height: 170px"
+            style="max-width: 230px; height: 170px; border-radius: 8px"
             :style="{ 'background-color': category.color }"
           >
             <div class="card-body text-center">
@@ -166,6 +166,7 @@
         <div v-for="recipe in recipes" :key="recipe.id" class="col-12 col-lg-3">
           <div
             class="card shadow-sm"
+            style="border-radius: 17px"
             :style="{ 'background-color': recipe.color }"
           >
             <div class="card-body">
