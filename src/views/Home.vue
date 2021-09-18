@@ -2,7 +2,7 @@
 <template>
   <div class="container">
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-light bg-white">
+    <nav class="navbar navbar-light bg-transparent">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img
@@ -65,7 +65,7 @@
             />
           </div>
         </div>
-        <p class="lead">
+        <p class="lead text-muted">
           I would think that conserving our natural resources should be a
           conservative position. Not to waste food, and not to throw away a lot
           of the food that we buy.
@@ -99,11 +99,13 @@
 
     <!-- Category Section -->
     <div class="row mb-5 py-5">
-      <h3>Browse Our Category</h3>
-      <h3 class="text-primary">Receipt</h3>
+      <div class="mb-4">
+        <h3 class="fw-bold">Browse Our Category</h3>
+        <h3 class="fw-bold text-primary">Receipt</h3>
+      </div>
       <div
         class="row flex-nowrap mb-4 g-2"
-        style="overflow-x: scroll; scrollbar-width: none"
+        style="overflow-x: scroll; scrollbar-width: none; row-gap: 0.25rem"
       >
         <div
           v-for="category in categories"
@@ -112,7 +114,7 @@
           style="flex-basis: 230px"
         >
           <div
-            class="card"
+            class="card border-0"
             style="max-width: 230px; height: 170px; border-radius: 8px"
             :style="{ 'background-color': category.color }"
           >
@@ -171,12 +173,14 @@
 
     <!-- Receipt Section -->
     <div class="row" style="margin-bottom: 160px">
-      <h3>Browse Our Trending</h3>
-      <h3 class="text-primary">Receipt</h3>
+      <div class="mb-4">
+        <h3 class="fw-bold">Browse Our Trending</h3>
+        <h3 class="text-primary fw-bold">Receipt</h3>
+      </div>
       <div class="row mb-5" style="row-gap: 1.5rem">
         <div v-for="recipe in recipes" :key="recipe.id" class="col-12 col-lg-3">
           <div
-            class="card shadow-sm"
+            class="card shadow-sm border-0"
             style="border-radius: 17px"
             :style="{ 'background-color': recipe.color }"
           >
@@ -187,7 +191,7 @@
                 style="width: 118.15px; height: 120px"
                 class="mb-4"
               />
-              <h5 class="card-title">{{ recipe.name }}</h5>
+              <h5 class="card-title fw-bold">{{ recipe.name }}</h5>
               <p class="card-text text-primary">{{ recipe.category }}</p>
               <div class="text-warning">
                 <i class="bi bi-star-fill"></i>
@@ -397,7 +401,7 @@ export default {
           name: 'Cupcake',
           qty: 11,
           imgFile: 'cupcake.png',
-          color: '',
+          color: '#F0FEEB',
         },
       ],
       recipes: [
