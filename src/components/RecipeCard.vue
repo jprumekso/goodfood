@@ -21,13 +21,7 @@
             />
             <h5 class="card-title fw-bold">{{ recipe.name }}</h5>
             <p class="card-text text-primary">{{ recipe.category }}</p>
-            <div class="text-warning">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
+            <div v-html="showStar(recipe.rating)"></div>
           </div>
         </div>
       </div>
@@ -49,16 +43,52 @@ export default {
     },
   },
 
+  computed: {
+    starRating() {
+      const filledStar = [];
+
+      // eslint-disable-next-line no-plusplus
+      for (let index = 0; index < 4; index++) {
+        filledStar.push('<i class="bi bi-star-filled"');
+      }
+
+      return filledStar;
+    },
+  },
+
   methods: {
     getImgUrl(img) {
       // eslint-disable-next-line import/no-dynamic-require
       return require(`@/assets/${img}`);
+    },
+
+    showStar(rating) {
+      const starsMarkup = [];
+
+      // eslint-disable-next-line no-plusplus
+      for (let index = 0; index < rating; index++) {
+        starsMarkup.push('<i class="bi bi-star-fill text-warning"></i>');
+      }
+
+      const unfilledStar = 5 - rating;
+      // eslint-disable-next-line no-plusplus
+      for (let index = 0; index < unfilledStar; index++) {
+        starsMarkup.push('<i class="bi bi-star-fill blank-star"></i>');
+      }
+
+      const starString = starsMarkup.join('');
+
+      return starString;
     },
   },
 };
 </script>
 
 <style>
+  .blank-star {
+    color: #c9c9c9;
+  }
+
   .receipt-card .card-background {
     position: "relative";
     z-index: 1;

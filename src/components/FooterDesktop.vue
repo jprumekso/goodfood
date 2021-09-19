@@ -7,13 +7,11 @@
       >
         <div>
           <img src="../assets/elemes.png" class="mb-4" />
-          <p class="text-muted">
-            Jl. Prof. DR. Satrio No.7 RT.3/RW.3, Karet Kuningan, <br />
-            Kecamatan Setiabudi, Kota Jakarta Selatan, <br />
-            Daerah Khusus Ibukota Jakarta 12950
-          </p>
+          <p v-html="address" class="text-muted"></p>
           <div class="d-flex">
             <button
+              v-for="button in contact1"
+              :key="button.id"
               class="
                 btn btn-outline-primary
                 border-0
@@ -23,31 +21,7 @@
               "
               style="width: 40px; height: 40px"
             >
-              <i class="bi bi-envelope"></i>
-            </button>
-            <button
-              class="
-                btn btn-outline-primary
-                border-0
-                rounded-circle
-                text-success
-                me-2
-              "
-              style="width: 40px; height: 40px"
-            >
-              <i class="bi bi-telephone"></i>
-            </button>
-            <button
-              class="
-                btn btn-outline-primary
-                border-0
-                rounded-circle
-                text-success
-                me-2
-              "
-              style="width: 40px; height: 40px"
-            >
-              <i class="bi bi-instagram"></i>
+              <i :class="button.icon"></i>
             </button>
           </div>
         </div>
@@ -55,18 +29,11 @@
         <div>
           <p class="fw-bold">Categories</p>
           <ul class="nav d-none d-lg-block">
-            <li>
-              <a href="#" class="nav-link link-dark px-0 text-muted">Home</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark px-0 text-muted">About</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark px-0 text-muted">Blogs</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark px-0 text-muted"
-                >Contact Us</a
+            <li v-for="link in categories" :key="link.id">
+              <router-link
+                :to="link.route"
+                class="nav-link link-dark px-0 text-muted"
+                >{{ link.title }}</router-link
               >
             </li>
           </ul>
@@ -75,17 +42,11 @@
         <div>
           <p class="fw-bold">About Us</p>
           <ul class="nav d-none d-lg-block">
-            <li>
-              <a href="#" class="nav-link link-dark px-0 text-muted"
-                >About Us</a
-              >
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark px-0 text-muted">FAQ</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark px-0 text-muted"
-                >Report Problem</a
+            <li v-for="link in about" :key="link.id">
+              <router-link
+                :to="link.route"
+                class="nav-link link-dark px-0 text-muted"
+                >{{ link.title }}</router-link
               >
             </li>
           </ul>
@@ -93,9 +54,7 @@
 
         <div>
           <p class="fw-bold">Newsletter</p>
-          <p class="text-muted">
-            Get now free 50% discount for all<br />products on your first order
-          </p>
+          <p class="text-muted" v-html="newsLetter"></p>
           <div class="input-group mb-3" style="width: 250px">
             <input
               type="text"
@@ -107,16 +66,11 @@
 
           <div>
             <ul class="nav flex-column">
-              <li>
-                <a href="#" class="nav-link link-dark px-0"
-                  ><i class="bi bi-envelope text-primary"></i>
-                  elemesid@gmail.com</a
-                >
-              </li>
-              <li>
-                <a href="#" class="nav-link link-dark px-0"
-                  ><i class="bi bi-envelope text-primary"></i> 0888 1111 2222</a
-                >
+              <li v-for="detail in contact2" :key="detail.id">
+                <a href="#" class="nav-link link-dark px-0">
+                  <i :class="detail.icon" class="text-primary"></i>
+                  {{ detail.content }}
+                </a>
               </li>
             </ul>
           </div>
@@ -126,7 +80,7 @@
 
     <div class="d-flex bg-white justify-content-center py-4">
       <p class="mb-0 text-muted">
-        <small>@ 2021 ELEMES ID . ALL RIGHTS SERVED</small>
+        <small>{{ copyRight }}</small>
       </p>
     </div>
   </div>
@@ -135,6 +89,89 @@
 <script>
 export default {
   name: 'FooterDesktop',
+
+  data() {
+    return {
+      address: 'Jl. Prof. DR. Satrio No.7 RT.3/RW.3, Karet Kuningan, <br />Kecamatan Setiabudi, Kota Jakarta Selatan, <br /> Daerah Khusus Ibukota Jakarta 12950',
+
+      contact1: [
+        {
+          id: 1,
+          icon: 'bi bi-envelope',
+        },
+        {
+          id: 2,
+          icon: 'bi bi-telephone',
+        },
+        {
+          id: 3,
+          icon: 'bi bi-instagram',
+        },
+      ],
+
+      categories: [
+        {
+          id: 1,
+          title: 'Home',
+          route: '/',
+        },
+        {
+          id: 2,
+          title: 'About',
+          route: '/about',
+        },
+        {
+          id: 3,
+          title: 'Blogs',
+          route: '/blogs',
+        },
+        {
+          id: 4,
+          title: 'Contact Us',
+          route: '/contact-us',
+        },
+      ],
+
+      about: [
+        {
+          id: 1,
+          title: 'About Us',
+          route: '/about',
+        },
+        {
+          id: 2,
+          title: 'FAQ',
+          route: '/faq',
+        },
+        {
+          id: 3,
+          title: 'Report Problem',
+          route: '/report-problem',
+        },
+      ],
+
+      newsLetter: 'Get now free 50% discount for all<br />products on your first order',
+
+      contact2: [
+        {
+          id: 1,
+          icon: 'bi bi-envelope',
+          content: 'elemesid@gmail.com',
+        },
+        {
+          id: 2,
+          icon: 'bi bi-telephone',
+          content: '0888 1111 2222',
+        },
+      ],
+    };
+  },
+
+  computed: {
+    copyRight() {
+      return `@ ${new Date().getFullYear()} ELEMES ID . ALL RIGHTS RESERVED`;
+    },
+  },
 };
 </script>
 

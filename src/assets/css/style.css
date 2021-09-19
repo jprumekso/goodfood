@@ -9,7 +9,9 @@ body {
   border-color: #8bac3e;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
   background-color: #a4b441;
 }
 
@@ -32,6 +34,12 @@ body {
 
 .text-warning {
   color: #ff8412 !important;
+}
+
+a.router-link-active,
+a.router-link-exact-active {
+  color: #8bac3e !important;
+  font-weight: bold;
 }
 
 .shadow {
