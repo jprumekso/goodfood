@@ -14,7 +14,7 @@
     <!-- End of Category Section -->
 
     <!-- Recipe Section -->
-    <recipe-card :recipes="recipes"></recipe-card>>
+    <recipe-card :recipes="recipes"></recipe-card>
     <!-- End of Recipe Section -->
   </div>
 

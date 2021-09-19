@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="d-flex justify-content-center">
-      <button class="btn btn-primary rounded-pill">ALL Receipt</button>
+      <button class="btn btn-primary rounded-pill">All Receipt</button>
     </div>
   </div>
 </template>

@@ -38,8 +38,9 @@
           v-for="action in menuActions"
           :key="action.id"
           href="#"
-          class="btn d-none d-lg-inline-block"
+          class="btn d-lg-inline-block"
           :class="{
+            'd-none': !action.showOnMobile,
             'btn-primary': action.isPrimary,
             'rounded-pill': action.isPrimary,
           }"
@@ -94,11 +95,13 @@ export default {
           id: 1,
           title: 'Masuk',
           isPrimary: false,
+          showOnMobile: false,
         },
         {
           id: 2,
           title: 'Daftar Sekarang',
           isPrimary: true,
+          showOnMobile: true,
         },
       ],
     };
