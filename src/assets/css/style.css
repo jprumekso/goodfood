@@ -9,8 +9,16 @@ body {
   border-color: #8bac3e;
 }
 
+.btn-primary:hover {
+  background-color: #a4b441;
+}
+
 .btn-light {
   background-color: #f2f2f2;
+}
+
+.btn-light:hover {
+  background-color: #eee;
 }
 
 .text-primary {

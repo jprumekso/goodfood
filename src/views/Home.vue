@@ -104,7 +104,7 @@
         <h3 class="fw-bold text-primary">Receipt</h3>
       </div>
       <div
-        class="row flex-nowrap mb-4 g-2"
+        class="row flex-nowrap mb-5 g-2"
         style="overflow-x: scroll; scrollbar-width: none; row-gap: 0.25rem"
       >
         <div
@@ -114,10 +114,11 @@
           style="flex-basis: 230px"
         >
           <div
-            class="card border-0"
+            class="card category-card border-0"
             style="max-width: 230px; height: 170px; border-radius: 8px"
             :style="{ 'background-color': category.color }"
           >
+            <div class="card-background"></div>
             <div class="card-body text-center">
               <img
                 :src="getImgUrl(category.imgFile)"
@@ -180,10 +181,11 @@
       <div class="row mb-5" style="row-gap: 1.5rem">
         <div v-for="recipe in recipes" :key="recipe.id" class="col-12 col-lg-3">
           <div
-            class="card shadow-sm border-0"
+            class="card receipt-card shadow-sm border-0"
             style="border-radius: 17px"
             :style="{ 'background-color': recipe.color }"
           >
+            <div class="card-background"></div>
             <div class="card-body">
               <img
                 :src="getImgUrl(recipe.imgFile)"
@@ -504,5 +506,66 @@ export default {
     background-image: url("../assets/background.png");
     background-size: auto;
     background-repeat: no-repeat;
+  }
+
+  .category-card > .card-background {
+    opacity: 0;
+    position: "relative";
+    z-index: 1;
+  }
+
+  .category-card > .card-background::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    z-index: -1;
+    background-image: url("../assets/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .category-card {
+    transition: all 0.3s;
+  }
+
+  .category-card:hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+    transform: scaleX(0.93);
+    padding-bottom: 15px;
+  }
+
+  .category-card:hover .card-background {
+    opacity: 1;
+  }
+
+  .receipt-card .card-background {
+    position: "relative";
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .receipt-card .card-background::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.07;
+    z-index: -1;
+    background-image: url("../assets/background.png");
+    background-size: contain;
+  }
+
+  .receipt-card:hover .card-background {
+    opacity: 1;
   }
 </style>
