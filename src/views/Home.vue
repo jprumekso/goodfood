@@ -229,19 +229,37 @@
           </p>
           <div class="d-flex">
             <button
-              class="btn rounded-circle text-success me-2"
+              class="
+                btn btn-outline-primary
+                border-0
+                rounded-circle
+                text-success
+                me-2
+              "
               style="width: 40px; height: 40px"
             >
               <i class="bi bi-envelope"></i>
             </button>
             <button
-              class="btn rounded-circle text-success me-2"
+              class="
+                btn btn-outline-primary
+                border-0
+                rounded-circle
+                text-success
+                me-2
+              "
               style="width: 40px; height: 40px"
             >
               <i class="bi bi-telephone"></i>
             </button>
             <button
-              class="btn rounded-circle text-success me-2"
+              class="
+                btn btn-outline-primary
+                border-0
+                rounded-circle
+                text-success
+                me-2
+              "
               style="width: 40px; height: 40px"
             >
               <i class="bi bi-instagram"></i>

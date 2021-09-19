@@ -21,6 +21,11 @@ body {
   background-color: #eee;
 }
 
+.btn-outline-primary:hover {
+  background-color: #a4b441;
+  color: white !important;
+}
+
 .text-primary {
   color: #8bac3e !important;
 }
