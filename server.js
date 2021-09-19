@@ -7,6 +7,6 @@ const server = express();
 server.use('/', serveStatic(path.join(__dirname, '/dist')));
 
 const port = process.env.PORT || 3000;
-applicationCache.listen(port);
+server.listen(port);
 
 console.log(`listening on port: ${port}`);
